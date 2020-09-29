@@ -25,15 +25,17 @@ can quickly add,delete,find tasks or update the completion status of a task.
 ### Setup <a name="setup"></a>
 Upon opening the application, the chatbot will enquire about the user's name.
 
-<pre><code>-------------------------------------------------------------<br>
-Hello! I'm Mike!<br>
-Enter your name:<br>
+<pre><code>-------------------------------------------------------------
+Hello! I'm Mike!
+Enter your name:
 ------------------------------------------------------------- </code></pre>
 
 After the user enters the name, the chatbot then greets the user.
 
-<pre><code>-------------------------------------------------------------<br>
-Hello Muthu !<br>
+<pre><code>-------------------------------------------------------------
+Muthu
+-------------------------------------------------------------
+Hello Muthu !
 -------------------------------------------------------------</code></pre>
 
 
@@ -41,13 +43,13 @@ Hello Muthu !<br>
 If the user had no data stored previously, the user can proceed to the [begin](https://github.com/syncode98/ip#begin) 
 section. Otherwise, the application will show the pending tasks that the user had saved in the previous session.
 
-<pre><code>-------------------------------------------------------------<br>
-Here are the tasks!<br>
-D | 0 | exam(by: 10 Oct 2019 )<br>
-D | 0 | homework(by: 18:00 20 Oct 2019 )<br>
-E | 0 | charity match(at:  10 May 2019 )<br>
-E | 1 | marathon(at: 18:00 5 May 2019 )<br>
-E | 0 | marathon(at: 18:00-20:00 9 Sep 2019 )<br>
+<pre><code>-------------------------------------------------------------
+Here are the tasks!
+D | 0 | exam(by: 10 Oct 2019 )
+D | 0 | homework(by: 18:00 20 Oct 2019 )
+E | 0 | charity match(at:  10 May 2019 )
+E | 1 | marathon(at: 18:00 5 May 2019 )
+E | 0 | marathon(at: 18:00-20:00 9 Sep 2019 )
 -------------------------------------------------------------</code></pre>
 
 The format of the task displayed is as follows: <br>
@@ -58,26 +60,26 @@ Type of task | Completion status | Task <br>
 
 Subsequently, the user can choose to keep the tasks or to delete them.
 
-<pre><code>-------------------------------------------------------------<br>
-Do you want to keep the contents of the file?<br>
+<pre><code>-------------------------------------------------------------
+Do you want to keep the contents of the file?
 -------------------------------------------------------------</code></pre>
 
 If a file does not exist to store the data, then the program creates one for the user automatically.
 
 If the directory does not exist, then the program creates the directory and the data file for the user .
 
-<pre><code>-------------------------------------------------------------<br>
-The directory does not exist!<br>
--------------------------------------------------------------<br>
-A new directory has been created at C:\Users\Muthu Kumar\Desktop\cs2113T-project\data\data.txt<br>
+<pre><code>-------------------------------------------------------------
+The directory does not exist!
+-------------------------------------------------------------
+A new directory has been created at C:\Users\Muthu Kumar\Desktop\cs2113T-project\data\data.txt
 -------------------------------------------------------------</code></pre>
 
 
 
 #### Begin <a name="begin"></a>
 After the loading  the data, the user can now start entering the tasks.
-<pre><code>-------------------------------------------------------------<br>
-Alright Muthu , What can I do for you?<br>
+<pre><code>-------------------------------------------------------------
+Alright Muthu , What can I do for you?
 -------------------------------------------------------------</code></pre>
 
 ## Features <a name="features"></a>
@@ -96,78 +98,62 @@ There are three types of tasks:
 ## Todo:`todo` <a name="todo"></a>
 
 Tasks that do not have any deadlines.
-
-Example of usage: 
-
-`todo homework`
-
-Expected outcome:
-
-`[T][⨉]homework`
+<pre><code>-------------------------------------------------------------
+todo homework
+-------------------------------------------------------------
+[T][⨉]homework
+-------------------------------------------------------------
+</code></pre>
 
 ## Deadline:`deadline` <a name="deadline"></a>
 
-Store tasks that have a deadline
+Tasks that have a deadline
 
 The deadline can be entered in 2 formats:
 
-1.With date.
-
-Example of usage: 
-
-`deadline homework/by 10-01-2019`
-
-Expected outcome:
-
-` [D][⨉]homework(by: 10 Oct 2019 )`
-
-
-2.With date and the time.
-
-Example of usage: 
-
-`deadline homework/by 20-10-2019 18:00`
-
-Expected outcome:
-
-` [D][⨉]homework(by: 18:00 20 Oct 2019 )`
+* Task with the date:
+    <pre><code>-------------------------------------------------------------
+    deadline homework/by 10-01-2019
+    -------------------------------------------------------------
+     [D][⨉]homework(by: 10 Oct 2019 )
+    -------------------------------------------------------------</code></pre>
+    
+* Task with the date and time:
+    <pre><code>-------------------------------------------------------------
+    deadline homework/by 20-10-2019 18:00
+    -------------------------------------------------------------
+     [D][⨉]homework(by: 18:00 20 Oct 2019 )
+    -------------------------------------------------------------</code></pre>
 
 ## Event:`event` <a name="event"></a>
 
-Tasks that have a duration as a deadline
+Tasks that represent events.
 
-The deadline can be entered in 3 formats:
+The event can be entered in 3 formats:
 
-* Date.
-<
-    Example of usage: 
+* Event with the date:
+    <pre><code>-------------------------------------------------------------
+    event charity match/at 10-05-2019
+    -------------------------------------------------------------
+    [E][⨉]charity match(at:  10 May 2019 )
+    -------------------------------------------------------------
+    </code></pre>
 
-    `event charity match/at 10-05-2019`
+* Event with the date and Time:
+    <pre><code>-------------------------------------------------------------
+    event marathon/at 05-05-2019 18:00
+    -------------------------------------------------------------
+    [E][⨉]marathon(at: 18:00 5 May 2019 )
+    -------------------------------------------------------------
+    </code></pre>
+    
+* Event with the date, Start time and End time of the event:
+    <pre><code>-------------------------------------------------------------
+    event marathon/at 09-09-2019 18:00 - 20:00
+    -------------------------------------------------------------
+    [E][⨉]marathon(at: 18:00-20:00 9 Sep 2019 ) 
+    </code></pre>
 
-    Expected outcome:
-
-    ` [E][⨉]charity match(at:  10 May 2019 )`
-
-
-### 2.The date and the time.
-
-Example of usage: 
-
-`event marathon/at 05-05-2019 18:00`
-
-Expected outcome:
-
-` [E][⨉]marathon(at: 18:00 5 May 2019 )`
-
-### 3.The date,the start and end time of the event.
-
-Example of usage: 
-
-`event marathon/at 09-09-2019 18:00 - 20:00`
-
-Expected outcome:
-
-`[E][⨉]marathon(at: 18:00-20:00 9 Sep 2019 )`
 
 ## Error detection <a name="error"></a>
 
@@ -182,7 +168,7 @@ Shows all the tasks in the program.
 
 <pre><code>-------------------------------------------------------------
 list
--------------------------------------------------------------<br>
+-------------------------------------------------------------
 Here are the tasks in your list:
 1.[D][⨉]exam(by: 10 Oct 2019 )
 2.[D][⨉]homework(by: 18:00 20 Oct 2019 )
