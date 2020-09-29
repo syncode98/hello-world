@@ -111,7 +111,7 @@ Store tasks that have a deadline
 
 The deadline can be entered in 2 formats:
 
-1.Only the date.
+1.With date.
 
 Example of usage: 
 
@@ -122,7 +122,7 @@ Expected outcome:
 ` [D][⨉]homework(by: 10 Oct 2019 )`
 
 
-2.The date and the time.
+2.With date and the time.
 
 Example of usage: 
 
@@ -138,15 +138,15 @@ Tasks that have a duration as a deadline
 
 The deadline can be entered in 3 formats:
 
-### 1.Only the date.
+* Date.
+<
+    Example of usage: 
 
-Example of usage: 
+    `event charity match/at 10-05-2019`
 
-`event charity match/at 10-05-2019`
+    Expected outcome:
 
-Expected outcome:
-
-` [E][⨉]charity match(at:  10 May 2019 )`
+    ` [E][⨉]charity match(at:  10 May 2019 )`
 
 
 ### 2.The date and the time.
@@ -181,14 +181,14 @@ through statements such as these:
 Shows all the tasks in the program.
 
 <pre><code>-------------------------------------------------------------
-list<br>
+list
 -------------------------------------------------------------<br>
-Here are the tasks in your list:<br>
-1.[D][⨉]exam(by: 10 Oct 2019 )<br>
-2.[D][⨉]homework(by: 18:00 20 Oct 2019 )<br>
-3.[E][⨉]charity match(at:  10 May 2019 )<br>
-4.[E][⨉]marathon(at: 18:00 5 May 2019 )<br>
-5.[E][⨉]marathon(at: 18:00-20:00 9 Sep 2019 )<br>
+Here are the tasks in your list:
+1.[D][⨉]exam(by: 10 Oct 2019 )
+2.[D][⨉]homework(by: 18:00 20 Oct 2019 )
+3.[E][⨉]charity match(at:  10 May 2019 )
+4.[E][⨉]marathon(at: 18:00 5 May 2019 )
+5.[E][⨉]marathon(at: 18:00-20:00 9 Sep 2019 )
 -------------------------------------------------------------
 </code></pre>
 
@@ -196,16 +196,11 @@ Here are the tasks in your list:<br>
 
 Finds a task for the user
 
-Example of usage:
-`find marathon`
-
-Expected outcome:
-
 <pre><code>-------------------------------------------------------------
 find marathon 
 -------------------------------------------------------------
-Here are the matching tasks in your list:<br>
-1. [E][⨉]marathon(at: 18:00 5 May 2019 )<br>
+Here are the matching tasks in your list:
+1. [E][⨉]marathon(at: 18:00 5 May 2019 )
 2. [E][⨉]marathon(at: 18:00-20:00 9 Sep 2019 )
 -------------------------------------------------------------</code></pre>
 
@@ -213,14 +208,11 @@ Here are the matching tasks in your list:<br>
 
 Deletes the task for which the user had given the number for.
 
-Example of usage:
-`delete 4`
-
-Expected outcome:
-
 <pre><code>-------------------------------------------------------------
-Noted. I've removed this task:<br>
-[E][⨉]marathon(at: 18:00 5 May 2019 )<br>
+delete 4
+-------------------------------------------------------------
+Noted. I've removed this task:
+[E][⨉]marathon(at: 18:00 5 May 2019 )
 Now you have 4 tasks in the list.
 -------------------------------------------------------------</code></pre>
 
@@ -228,13 +220,10 @@ Now you have 4 tasks in the list.
 
 Updates the completion status for a task that has been completed.
 
-Example of usage:
-`done 4`
-
-Expected outcome:
-
 <pre><code>-------------------------------------------------------------
-Nice! I've marked this task as done:<br>
+done 4
+-------------------------------------------------------------
+Nice! I've marked this task as done:
 [E][✓]marathon(at: 18:00 5 May 2019 )
 -------------------------------------------------------------</code></pre>
 
@@ -243,8 +232,10 @@ Nice! I've marked this task as done:<br>
 Exits the application.
 
 <pre><code>-------------------------------------------------------------
-Noted. I've removed this task:<br>
-[E][✓]marathon(at: 18:00 5 May 2019 )<br>
+bye
+-------------------------------------------------------------
+Noted. I've removed this task:
+[E][✓]marathon(at: 18:00 5 May 2019 )
 Now you have 4 tasks in the list.
 -------------------------------------------------------------</code></pre>
 
