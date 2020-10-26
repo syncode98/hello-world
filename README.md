@@ -26,11 +26,13 @@ can quickly add,delete,find tasks or update the completion status of a task.
 Upon opening the application, the chatbot will enquire about the user's name.
 
 <pre><code>-------------------------------------------------------------<br>
+:warning:
 Hello! I'm Mike!<br>
 Enter your name:<br>
 ------------------------------------------------------------- </code></pre>
 
 After the user enters the name, the chatbot then greets the user.
+:warning:
 
 <pre><code>-------------------------------------------------------------<br>
 Hello Muthu !<br>
